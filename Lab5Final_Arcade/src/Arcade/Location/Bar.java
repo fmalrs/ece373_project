@@ -1,5 +1,5 @@
 package Arcade.Location;
 
 public class Bar {
-//testing 2
+//testing 3
 }
