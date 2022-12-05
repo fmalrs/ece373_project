@@ -1,4 +1,4 @@
-package org.Arcade.GUI;
+package Arcade.GUI;
 
 import java.util.ArrayList;
 import java.awt.*;
