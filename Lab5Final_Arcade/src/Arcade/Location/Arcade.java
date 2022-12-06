@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import Arcade.People.Person;
 
-public class Arcade {
+public class Arcade{
 	
 	private ArrayList<Item> bar;
 	private ArrayList<Item> shop;
@@ -61,5 +61,28 @@ public class Arcade {
 	}
 	
 	
+	//if person exists, will return index of person. If person does not exist, will return -1
+	public int containsPerson(String name)
+	{		
+		for(int n = 0; n < people.size(); n++) 
+		{
+			if ((people.get(n).getName().equals( name)))
+			{
+				return n;
+			}
+		}
+		return -1;	
+    }
 	
+	public boolean passwordCheck(int index, String password) {
+		if(people.get(index).getPassword() == password) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 }
+	
+	
+

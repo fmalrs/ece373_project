@@ -1,6 +1,7 @@
 package Arcade.People;
 
-public abstract class Person {
+import java.io.Serializable;
+public abstract class Person  implements Serializable{
 	
 	protected String name;
 	protected String password;
