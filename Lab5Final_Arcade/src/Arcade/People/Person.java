@@ -1,5 +1,5 @@
 package Arcade.People;
-//push
+//pushf
 import java.io.Serializable;
 public abstract class Person  implements Serializable{
 	

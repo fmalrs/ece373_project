@@ -32,7 +32,7 @@ import Arcade.Location.*;
 import Arcade.Logistics.Card;
 import Arcade.People.Person;
 import Arcade.People.User;
-
+//test
 public class WelcomeScreenGUI extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
