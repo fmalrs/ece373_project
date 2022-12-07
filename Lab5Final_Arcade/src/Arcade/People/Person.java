@@ -9,12 +9,12 @@ public abstract class Person  implements Serializable{
 	protected boolean access;
 	
 	
-	public Person(String name, String password, boolean access, int age) {
+	public Person() {
 		super();
-		this.name = name;
-		this.age = age;
-		this.password = password;
-		this.access = access;
+		this.name = "null";
+		this.age = 0;
+		this.password = "null";
+		this.access = false;
 	}
 	
 	public String getName() {
@@ -34,6 +34,12 @@ public abstract class Person  implements Serializable{
 	}
 	public void setAccess(boolean access) {
 		this.access = access;
+	}
+	public void setAge(int yearsOnEarth) {
+		this.age = yearsOnEarth;
+	}
+	public int getAge() {
+		return age;
 	}
 	
 	

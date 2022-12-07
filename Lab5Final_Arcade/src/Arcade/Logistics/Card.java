@@ -9,11 +9,10 @@ public class Card {
 	private int credits;
 	
 	
-	public Card(User owner, int tickets, int credits) {
+	public Card() {
 		super();
-		this.owner = owner;
-		this.tickets = tickets;
-		this.credits = credits;
+		this.tickets = 0;
+		this.credits = 0;
 	}
 
 

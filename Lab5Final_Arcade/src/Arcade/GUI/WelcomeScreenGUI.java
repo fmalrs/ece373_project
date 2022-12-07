@@ -20,6 +20,8 @@ import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.Canvas;
 import javax.swing.ImageIcon;
@@ -27,12 +29,15 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import Arcade.Location.*;
+import Arcade.Logistics.Card;
+import Arcade.People.Person;
+import Arcade.People.User;
 
-public class WelcomeScreenGUI extends JFrame {
+public class WelcomeScreenGUI extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
+	private JButton btnLogin;
+	private JButton btnRegister;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
@@ -84,16 +89,68 @@ public class WelcomeScreenGUI extends JFrame {
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel_3, "cell 2 1,growx,aligny top");
 		
-		btnNewButton = new JButton("Login");
-		contentPane.add(btnNewButton, "cell 0 2,alignx center,aligny top");
+		btnLogin = new JButton("Login");
+		btnLogin.addActionListener(this);
+		contentPane.add(btnLogin, "cell 0 2,alignx center,aligny top");
 		
-		btnNewButton_1 = new JButton("Register");
-		btnNewButton_1.setVerticalAlignment(SwingConstants.TOP);
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		contentPane.add(btnNewButton_1, "cell 2 2,alignx center,aligny top");
+		btnRegister = new JButton("Register");
+		btnRegister.setVerticalAlignment(SwingConstants.TOP);
+		btnRegister.addActionListener(this);
+		contentPane.add(btnRegister, "cell 2 2,alignx center,aligny top");
 	}
+	
+	public void actionPerformed(ActionEvent e) {
+		JButton source = (JButton)(e.getSource());
+		
+		if (source.equals(btnLogin)) {
+			JPanel loginPanel = new JPanel();
+			GridLayout g1 = new GridLayout(4,1);
+			JLabel Name = new JLabel("Username:");
+			JLabel Password = new JLabel("Password:");
+			JTextField inputName = new JTextField(6);
+			JTextField inputPassword = new JTextField(6);
+			loginPanel.setLayout(g1);
+			loginPanel.add(Name);
+			loginPanel.add(inputName);
+			loginPanel.add(Password);
+			loginPanel.add(inputPassword);
+			int result = JOptionPane.showConfirmDialog(null, loginPanel, "Add Course", JOptionPane.OK_CANCEL_OPTION);
+			
+		}
+		if (source.equals(btnRegister)) {
+			JPanel registerPanel = new JPanel();
+			GridLayout g1 = new GridLayout(6,1);
+			JLabel Name = new JLabel("Username:");
+			JLabel Password = new JLabel("Password:");
+			JLabel age = new JLabel("Age:");
+			JTextField inputName = new JTextField(6);
+			JTextField inputPassword = new JTextField(6);
+			JTextField inputAge = new JTextField(6);
+			registerPanel.setLayout(g1);
+			registerPanel.add(Name);
+			registerPanel.add(inputName);
+			registerPanel.add(Password);
+			registerPanel.add(inputPassword);
+			registerPanel.add(age);
+			registerPanel.add(inputAge);
+			int result = JOptionPane.showConfirmDialog(null, registerPanel, "Add Course", JOptionPane.OK_CANCEL_OPTION);
+			if(result == JOptionPane.OK_OPTION){
+			String name = inputName.toString();
+			String password = inputPassword.toString();
+			Boolean access = false;
+			int userAge = Integer.parseInt(inputAge.toString());
+			User newUser = new User();
+			Card newCard = new Card();
+			newUser.setCard(newCard);
+			newUser.setName(name);
+			newUser.setAccess(access);
+			newUser.setPassword(password);
+			newUser.setAge(userAge);
+			}
+		}
+		
 
+	}
 }
+
+

@@ -16,14 +16,14 @@ public class User extends Person {
 	private Card card;
 	
 	
-	public User(String name, String password, boolean access, int age, int money, Card card) {
-		super(name, password, access, age);
-		this.money = money;
-		this.card = card;
+	public User() {
+		this.money = 0;
 	}
+	
 	public int getMoney() {
 		return money;
 	}
+	
 	public void setMoney(int money) {
 		this.money = money;
 	}
@@ -32,6 +32,7 @@ public class User extends Person {
 	}
 	public void setCard(Card card) {
 		this.card = card;
+		card.setOwner(this);
 	}
 	
 	public static void saveData(User e){

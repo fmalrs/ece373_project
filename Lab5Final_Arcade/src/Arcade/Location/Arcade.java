@@ -46,8 +46,8 @@ public class Arcade{
 	}
 
 
-	public void setPeople(ArrayList<Person> people) {
-		this.people = people;
+	public void addPerson(Person newPerson) {
+		people.add(newPerson);
 	}
 
 
