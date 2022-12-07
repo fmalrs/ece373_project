@@ -1,6 +1,6 @@
 package Arcade.Logistics;
 import Arcade.People.*;
-
+//
 
 public class Card {
 

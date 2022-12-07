@@ -115,7 +115,9 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 			loginPanel.add(Password);
 			loginPanel.add(inputPassword);
 			int result = JOptionPane.showConfirmDialog(null, loginPanel, "Add Course", JOptionPane.OK_CANCEL_OPTION);
-			
+			if(result == JOptionPane.OK_OPTION){
+				
+			}
 		}
 		if (source.equals(btnRegister)) {
 			JPanel registerPanel = new JPanel();
