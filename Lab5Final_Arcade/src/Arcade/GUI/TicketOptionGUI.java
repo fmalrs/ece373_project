@@ -10,6 +10,9 @@ import javax.swing.border.EmptyBorder;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
+import Arcade.Location.Arcade;
+
 import java.awt.Color;
 import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JLabel;
@@ -24,6 +27,7 @@ public class TicketOptionGUI extends JPanel implements ActionListener  {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private Arcade Arcade;
 
 	/**
 	 * Launch the application.  
@@ -32,7 +36,7 @@ public class TicketOptionGUI extends JPanel implements ActionListener  {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TicketOptionGUI frame = new TicketOptionGUI();
+					TicketOptionGUI frame = new TicketOptionGUI(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,7 +48,8 @@ public class TicketOptionGUI extends JPanel implements ActionListener  {
 	/**
 	 * Create the frame.
 	 */
-	public TicketOptionGUI() {
+	public TicketOptionGUI(Arcade arcade) {
+		this.Arcade = arcade;
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);

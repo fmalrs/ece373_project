@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Arcade.Location.Arcade;
+
 import java.awt.Color;
 
 import javax.swing.JLabel;
@@ -19,7 +22,7 @@ public class TerminalOptionGUI extends JPanel implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
-
+	private Arcade Arcade;
 	/**
 	 * Launch the application.  
 	 */
@@ -27,7 +30,7 @@ public class TerminalOptionGUI extends JPanel implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TerminalOptionGUI frame = new TerminalOptionGUI();
+					TerminalOptionGUI frame = new TerminalOptionGUI(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +42,8 @@ public class TerminalOptionGUI extends JPanel implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
-	public TerminalOptionGUI() {
+	public TerminalOptionGUI(Arcade arcade) {
+		this.Arcade = arcade;
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);

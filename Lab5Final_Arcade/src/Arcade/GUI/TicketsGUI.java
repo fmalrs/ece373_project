@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Arcade.Location.Arcade;
+
 import java.awt.Color;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
@@ -15,7 +18,7 @@ import javax.swing.JButton;
 public class TicketsGUI extends JPanel implements ActionListener  {
 
 	private JPanel contentPane;
-
+	private Arcade Arcade;
 	/**
 	 * Launch the application. 
 	 */ 
@@ -23,7 +26,7 @@ public class TicketsGUI extends JPanel implements ActionListener  {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TicketsGUI frame = new TicketsGUI();
+					TicketsGUI frame = new TicketsGUI(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +38,8 @@ public class TicketsGUI extends JPanel implements ActionListener  {
 	/**
 	 * Create the frame.
 	 */
-	public TicketsGUI() {
+	public TicketsGUI(Arcade arcade) {
+		this.Arcade = arcade;
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);

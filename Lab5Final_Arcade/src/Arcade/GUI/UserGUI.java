@@ -8,12 +8,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import Arcade.Location.Arcade;
+
 import java.awt.Color;
 import net.miginfocom.swing.MigLayout;
 
 public class UserGUI extends JFrame {
 
 	private JPanel contentPane;
+	private Arcade Arcade;
 
 	/**
 	 * Launch the application. 
@@ -22,7 +26,7 @@ public class UserGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					UserGUI frame = new UserGUI();
+					UserGUI frame = new UserGUI(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +38,8 @@ public class UserGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public UserGUI() {
+	public UserGUI(Arcade arcade) {
+		this.Arcade = arcade;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

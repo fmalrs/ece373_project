@@ -10,6 +10,9 @@ import javax.swing.border.EmptyBorder;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
+import Arcade.Location.Arcade;
+
 import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -20,6 +23,7 @@ import net.miginfocom.swing.MigLayout;
 public class AdminGUI extends JPanel implements ActionListener {
 
 	private JPanel contentPane;
+	private Arcade Arcade;
 
 	/**
 	 * Launch the application. test   
@@ -28,7 +32,7 @@ public class AdminGUI extends JPanel implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AdminGUI frame = new AdminGUI();
+					AdminGUI frame = new AdminGUI(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +44,8 @@ public class AdminGUI extends JPanel implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
-	public AdminGUI() {
+	public AdminGUI(Arcade arcade) {
+		this.Arcade = arcade;
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
