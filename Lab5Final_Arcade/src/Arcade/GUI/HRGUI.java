@@ -19,12 +19,9 @@ public class HRGUI extends JFrame
 	private JMenuBar menuBar;		//the horizontal container
 	private JMenu adminMenu;
 	private JMenu userMenu;//JMenu objects are added to JMenuBar objects as the "tabs"
-	
 
 	// File submenus
-    
-	
-	
+
 	// Admin 
 	
 	private JMenuItem adminPrintAll; 		//JMenuItem objects are added to JMenu objects as the drop down selections.
