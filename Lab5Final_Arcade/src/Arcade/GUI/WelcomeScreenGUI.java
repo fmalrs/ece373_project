@@ -44,7 +44,7 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 	private JLabel lblNewLabel_3;
 
 	/**
-	 * Launch the application. 
+	 * Launch the application.  
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
