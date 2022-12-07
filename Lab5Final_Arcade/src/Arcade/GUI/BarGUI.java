@@ -5,12 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import net.miginfocom.swing.MigLayout;
 import java.awt.Color;
+import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-public class TerminalGUI extends JFrame {
+public class BarGUI extends JFrame {
 
 	private JPanel contentPane;
 
@@ -21,7 +21,7 @@ public class TerminalGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TerminalGUI frame = new TerminalGUI();
+					BarGUI frame = new BarGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,7 @@ public class TerminalGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TerminalGUI() {
+	public BarGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -41,22 +41,31 @@ public class TerminalGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[151.00,grow,center][grow][grow]", "[][][][][]"));
+		contentPane.setLayout(new MigLayout("", "[][grow][grow]", "[][][][][][]"));
 		
 		JLabel lblNewLabel = new JLabel("Hello, INSERTUSERHERE .");
 		contentPane.add(lblNewLabel, "cell 0 0");
 		
-		JLabel lblNewLabel_1 = new JLabel("What would you like to do today?");
-		contentPane.add(lblNewLabel_1, "cell 0 1,aligny top");
+		JLabel lblNewLabel_1 = new JLabel("What would you like to enjoy today?");
+		contentPane.add(lblNewLabel_1, "cell 0 1");
 		
-		JButton btnNewButton = new JButton("Add Credits");
-		contentPane.add(btnNewButton, "cell 0 4");
+		JButton btnFrenchFries = new JButton("French Fries");
+		contentPane.add(btnFrenchFries, "cell 0 4");
 		
-		JButton btnCheckCredits = new JButton("Check Credits");
-		contentPane.add(btnCheckCredits, "cell 1 4");
+		JButton btnJuice = new JButton("Juice");
+		contentPane.add(btnJuice, "cell 1 4");
 		
-		JButton btnNewButton_1_1 = new JButton("Check Tickets");
-		contentPane.add(btnNewButton_1_1, "cell 2 4");
+		JButton btnPizza = new JButton("Pizza");
+		contentPane.add(btnPizza, "cell 2 4");
+		
+		JLabel lblNewLabel_2 = new JLabel("10 Credits");
+		contentPane.add(lblNewLabel_2, "cell 0 5");
+		
+		JLabel lblNewLabel_2_1 = new JLabel("15 Credits");
+		contentPane.add(lblNewLabel_2_1, "cell 1 5");
+		
+		JLabel lblNewLabel_2_2 = new JLabel("20 Credits");
+		contentPane.add(lblNewLabel_2_2, "cell 2 5");
 	}
 
 }
