@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.Color;
+import net.miginfocom.swing.MigLayout;
 
 public class AdminGUI extends JFrame {
 
@@ -45,52 +46,27 @@ public class AdminGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new FormLayout(new ColumnSpec[] {
-				FormSpecs.RELATED_GAP_COLSPEC,
-				ColumnSpec.decode("default:grow"),
-				FormSpecs.RELATED_GAP_COLSPEC,
-				FormSpecs.RELATED_GAP_COLSPEC,},
-			new RowSpec[] {
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,}));
+		contentPane.setLayout(new MigLayout("", "[406px]", "[14px][14px][47.00px][49.00px][23px,grow][23px,grow]"));
 		
 		JLabel lblNewLabel = new JLabel("Hello, Admin");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel, "2, 2");
+		contentPane.add(lblNewLabel, "cell 0 0,growx,aligny top");
 		
 		JLabel lblNewLabel_1 = new JLabel("What would you like to do today?");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel_1, "2, 4, default, top");
+		contentPane.add(lblNewLabel_1, "cell 0 1,growx,aligny top");
 		
 		JButton termOptionsButton = new JButton("Terminal Options");
-		contentPane.add(termOptionsButton, "2, 6");
+		contentPane.add(termOptionsButton, "cell 0 2,growx,aligny top");
 		
 		JButton barOptionsButton = new JButton("Bar Options");
-		contentPane.add(barOptionsButton, "2, 10");
+		contentPane.add(barOptionsButton, "cell 0 3,growx,aligny top");
 		
 		JButton gameOptionsButton = new JButton("Game Options");
-		contentPane.add(gameOptionsButton, "2, 14");
+		contentPane.add(gameOptionsButton, "cell 0 4,growx,aligny top");
 		
 		JButton btnTicketOptions = new JButton("Ticket Options");
-		contentPane.add(btnTicketOptions, "2, 18");
+		contentPane.add(btnTicketOptions, "cell 0 5,growx,aligny top");
 	}
 
 }
