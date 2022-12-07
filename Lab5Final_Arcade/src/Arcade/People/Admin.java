@@ -7,8 +7,8 @@ import java.io.ObjectOutputStream;
 
 public class Admin extends Person{
 
-	public Admin(String name, String password, boolean access) {
-		super(name, password, access);
+	public Admin(String name, String password, boolean access, int age) {
+		super(name, password, access, age);
 	}
 	
 	public static void saveData(Admin e){

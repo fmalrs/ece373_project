@@ -5,12 +5,14 @@ public abstract class Person  implements Serializable{
 	
 	protected String name;
 	protected String password;
+	protected int age;
 	protected boolean access;
 	
 	
-	public Person(String name, String password, boolean access) {
+	public Person(String name, String password, boolean access, int age) {
 		super();
 		this.name = name;
+		this.age = age;
 		this.password = password;
 		this.access = access;
 	}

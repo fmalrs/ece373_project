@@ -16,8 +16,8 @@ public class User extends Person {
 	private Card card;
 	
 	
-	public User(String name, String password, boolean access, int money, Card card) {
-		super(name, password, access);
+	public User(String name, String password, boolean access, int age, int money, Card card) {
+		super(name, password, access, age);
 		this.money = money;
 		this.card = card;
 	}
