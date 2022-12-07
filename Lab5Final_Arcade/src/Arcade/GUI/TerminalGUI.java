@@ -1,6 +1,8 @@
 package Arcade.GUI;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,7 +12,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-public class TerminalGUI extends JFrame {
+public class TerminalGUI extends JPanel implements ActionListener {
 
 	private JPanel contentPane;
 
@@ -34,13 +36,11 @@ public class TerminalGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public TerminalGUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(contentPane);
 		contentPane.setLayout(new MigLayout("", "[151.00,grow,center][grow][grow]", "[][][][][]"));
 		
 		JLabel lblNewLabel = new JLabel("Hello, INSERTUSERHERE .");
@@ -58,5 +58,7 @@ public class TerminalGUI extends JFrame {
 		JButton btnNewButton_1_1 = new JButton("Check Tickets");
 		contentPane.add(btnNewButton_1_1, "cell 2 4");
 	}
-
+	public void actionPerformed(ActionEvent e) {
+		JButton source = (JButton)(e.getSource());
+	}
 }

@@ -1,6 +1,8 @@
 package Arcade.GUI;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
 
-public class BarOptionGUI extends JFrame {
+public class BarOptionGUI extends JPanel implements ActionListener  {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -43,13 +45,11 @@ public class BarOptionGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public BarOptionGUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(contentPane);
 		contentPane.setLayout(new MigLayout("", "[135px][136px][135px]", "[36.00px][14px][33.00px][14px][20px][23px]"));
 		
 		JLabel lblBarOptions = new JLabel("Bar Options");
@@ -113,5 +113,7 @@ public class BarOptionGUI extends JFrame {
 		JButton btnNewButton_1_1 = new JButton("Done");
 		contentPane.add(btnNewButton_1_1, "cell 2 5,growx,aligny top");
 	}
-
+	public void actionPerformed(ActionEvent e) {
+		JButton source = (JButton)(e.getSource());
+	}
 }

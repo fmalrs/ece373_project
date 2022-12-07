@@ -1,6 +1,8 @@
 package Arcade.GUI;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,7 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
 
-public class TerminalOptionGUI extends JFrame {
+public class TerminalOptionGUI extends JPanel implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -38,13 +40,11 @@ public class TerminalOptionGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public TerminalOptionGUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(contentPane);
 		contentPane.setLayout(new MigLayout("", "[418px]", "[48.00px][14px][48.00px][14px][20px][23px]"));
 		
 		JLabel lblNewLabel = new JLabel("Terminal Options");
@@ -70,5 +70,7 @@ public class TerminalOptionGUI extends JFrame {
 		JButton btnNewButton = new JButton("Done");
 		contentPane.add(btnNewButton, "cell 0 5,alignx center,aligny top");
 	}
-
+	public void actionPerformed(ActionEvent e) {
+		JButton source = (JButton)(e.getSource());
+	}
 }

@@ -1,6 +1,8 @@
 package Arcade.GUI;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,7 +12,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-public class TicketsGUI extends JFrame {
+public class TicketsGUI extends JPanel implements ActionListener  {
 
 	private JPanel contentPane;
 
@@ -34,13 +36,11 @@ public class TicketsGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public TicketsGUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(contentPane);
 		contentPane.setLayout(new MigLayout("", "[][grow][grow]", "[][][][][][][][][]"));
 		
 		JLabel lblNewLabel = new JLabel("Hello, INSERTUSERHERE .");
@@ -67,5 +67,7 @@ public class TicketsGUI extends JFrame {
 		JLabel lblNewLabel_3_1 = new JLabel("50 Tickets");
 		contentPane.add(lblNewLabel_3_1, "cell 1 7");
 	}
-
+	public void actionPerformed(ActionEvent e) {
+		JButton source = (JButton)(e.getSource());
+	}
 }

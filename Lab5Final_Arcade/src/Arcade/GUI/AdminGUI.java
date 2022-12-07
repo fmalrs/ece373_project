@@ -1,6 +1,8 @@
 package Arcade.GUI;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,7 +17,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import net.miginfocom.swing.MigLayout;
 
-public class AdminGUI extends JFrame {
+public class AdminGUI extends JPanel implements ActionListener {
 
 	private JPanel contentPane;
 
@@ -39,13 +41,11 @@ public class AdminGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public AdminGUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(contentPane);
 		contentPane.setLayout(new MigLayout("", "[406px]", "[14px][14px][47.00px][49.00px][23px,grow][23px,grow]"));
 		
 		JLabel lblNewLabel = new JLabel("Hello, Admin");
@@ -68,5 +68,7 @@ public class AdminGUI extends JFrame {
 		JButton btnTicketOptions = new JButton("Ticket Options");
 		contentPane.add(btnTicketOptions, "cell 0 5,growx,aligny top");
 	}
-
+	public void actionPerformed(ActionEvent e) {
+		JButton source = (JButton)(e.getSource());
+	}
 }
