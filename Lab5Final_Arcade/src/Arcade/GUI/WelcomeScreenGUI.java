@@ -66,35 +66,26 @@ public class WelcomeScreenGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new FormLayout(new ColumnSpec[] {
-				ColumnSpec.decode("143px:grow"),
-				ColumnSpec.decode("133px:grow"),
-				ColumnSpec.decode("165px:grow"),},
-			new RowSpec[] {
-				RowSpec.decode("max(83dlu;default)"),
-				RowSpec.decode("53px:grow"),
-				RowSpec.decode("38px"),
-				FormSpecs.RELATED_GAP_ROWSPEC,
-				FormSpecs.DEFAULT_ROWSPEC,}));
+		contentPane.setLayout(new MigLayout("", "[143px][133px][165px]", "[14px,grow,fill][14px][23px]"));
 		
 		lblNewLabel_1 = new JLabel("Welcome to the Arcade!");
 		lblNewLabel_1.setBackground(Color.WHITE);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel_1, "2, 1");
+		contentPane.add(lblNewLabel_1, "cell 1 0,growx,aligny top");
 		
 		lblNewLabel = new JLabel(new ImageIcon("Path/To/Your/Image.png"));
-		contentPane.add(lblNewLabel, "3, 1");
+		contentPane.add(lblNewLabel, "cell 2 0,growx,aligny center");
 		
 		lblNewLabel_2 = new JLabel("Are you an existing user?");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel_2, "1, 2");
+		contentPane.add(lblNewLabel_2, "cell 0 1,growx,aligny top");
 		
 		lblNewLabel_3 = new JLabel("Or are you a new user?");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel_3, "3, 2");
+		contentPane.add(lblNewLabel_3, "cell 2 1,growx,aligny top");
 		
 		btnNewButton = new JButton("Login");
-		contentPane.add(btnNewButton, "1, 3, center, default");
+		contentPane.add(btnNewButton, "cell 0 2,alignx center,aligny top");
 		
 		btnNewButton_1 = new JButton("Register");
 		btnNewButton_1.setVerticalAlignment(SwingConstants.TOP);
@@ -102,7 +93,7 @@ public class WelcomeScreenGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		contentPane.add(btnNewButton_1, "3, 3, center, default");
+		contentPane.add(btnNewButton_1, "cell 2 2,alignx center,aligny top");
 	}
 
 }
