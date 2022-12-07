@@ -1,7 +1,6 @@
 package Arcade.GUI;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -27,11 +26,14 @@ import java.awt.Canvas;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import Arcade.Location.*;
 import Arcade.Logistics.Card;
 import Arcade.People.Person;
 import Arcade.People.User;
+
+
 //test
 public class WelcomeScreenGUI extends JFrame implements ActionListener{
 
@@ -42,6 +44,7 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
+	private Arcade Arcade;
 
 	/**
 	 * Launch the application.  
@@ -50,8 +53,7 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					
-					WelcomeScreenGUI frame = new WelcomeScreenGUI();
+					WelcomeScreenGUI frame = new WelcomeScreenGUI(new Arcade(new ArrayList<Item>(),new ArrayList<Item>(),new ArrayList<Person>(),new ArrayList<Game>()));
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -63,7 +65,8 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 	/**
 	 * Create the frame.
 	 */
-	public WelcomeScreenGUI() {
+	public WelcomeScreenGUI(Arcade arcade) {
+		this.Arcade = arcade;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -114,8 +117,18 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 			loginPanel.add(inputName);
 			loginPanel.add(Password);
 			loginPanel.add(inputPassword);
-			int result = JOptionPane.showConfirmDialog(null, loginPanel, "Add Course", JOptionPane.OK_CANCEL_OPTION);
+			int result = JOptionPane.showConfirmDialog(null, loginPanel, "Login:", JOptionPane.OK_CANCEL_OPTION);
 			if(result == JOptionPane.OK_OPTION){
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							PlayGUI frame = new PlayGUI(Arcade);
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 				
 			}
 		}
@@ -135,12 +148,13 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 			registerPanel.add(inputPassword);
 			registerPanel.add(age);
 			registerPanel.add(inputAge);
-			int result = JOptionPane.showConfirmDialog(null, registerPanel, "Add Course", JOptionPane.OK_CANCEL_OPTION);
+			int result = JOptionPane.showConfirmDialog(null, registerPanel, "New User:", JOptionPane.OK_CANCEL_OPTION);
 			if(result == JOptionPane.OK_OPTION){
-			String name = inputName.toString();
-			String password = inputPassword.toString();
+			String name = inputName.getText();
+			String password = inputPassword.getText();
 			Boolean access = false;
-			int userAge = Integer.parseInt(inputAge.toString());
+			System.out.println(inputAge.getText());
+			int userAge = Integer.parseInt(inputAge.getText());
 			User newUser = new User();
 			Card newCard = new Card();
 			newUser.setCard(newCard);
@@ -148,6 +162,7 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 			newUser.setAccess(access);
 			newUser.setPassword(password);
 			newUser.setAge(userAge);
+			Arcade.addPerson(newUser);
 			}
 		}
 		

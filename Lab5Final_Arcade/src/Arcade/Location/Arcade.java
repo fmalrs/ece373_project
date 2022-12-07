@@ -1,7 +1,9 @@
 package Arcade.Location;
 
+import java.awt.EventQueue;
 import java.util.ArrayList;
 
+import Arcade.GUI.WelcomeScreenGUI;
 import Arcade.People.Person;
 
 public class Arcade{
@@ -82,6 +84,18 @@ public class Arcade{
 			return false;
 		}
 	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					WelcomeScreenGUI frame = new WelcomeScreenGUI(new Arcade(new ArrayList<Item>(),new ArrayList<Item>(),new ArrayList<Person>(),new ArrayList<Game>()));
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 }
 	
 	
