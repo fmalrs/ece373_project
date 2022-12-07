@@ -22,7 +22,7 @@ public class AdminGUI extends JPanel implements ActionListener {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application. test  
+	 * Launch the application. test   
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
