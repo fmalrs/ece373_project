@@ -47,7 +47,7 @@ public class WelcomeScreenGUI extends JFrame implements ActionListener{
 	private Arcade Arcade;
 
 	/**
-	 * Launch the application.  
+	 * Launch the application.    
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

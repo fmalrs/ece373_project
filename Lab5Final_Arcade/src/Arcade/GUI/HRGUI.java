@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-/* Demo by Lahiru Ariyananda and Peter Hall
+/* Demo by Lahiru Ariyananda and Peter Hall 
    Note :  this is very simple program  used as a  demo on  Serilizing and GUIs. 
    It does not test for faults or errors (  which needs to be implemented) 
  */

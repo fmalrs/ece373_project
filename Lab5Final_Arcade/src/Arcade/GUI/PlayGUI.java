@@ -24,7 +24,7 @@ public class PlayGUI extends JFrame implements ActionListener {
 	JButton btnStreetracer = new JButton("StreetRacer");
 
 	/**
-	 * Launch the application.
+	 * Launch the application. 
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
