@@ -10,7 +10,7 @@ public class Admin extends Person{
 	public Admin(String name, String password, boolean access, int age) {
 		super(name, password, access, age);
 	}
-	//fff
+	//ffffff
 	public static void saveData(Admin e){
 		
 		
